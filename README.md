@@ -44,5 +44,5 @@ docker exec -it php composer require api-platform/core #api-platform
 
 Modifier le fichier .env : 
 ```bash
-DATABASE_URL='mysql://user_name:strong_password@db:3306/database_name?serverVersion=mariadb-11.4.0'
+DATABASE_URL='mysql://user_name:strong_password@db:3306/database_name?serverVersion=mariadb-12.3.2'
 ```
