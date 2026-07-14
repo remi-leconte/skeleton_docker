@@ -1,7 +1,7 @@
 services:
-  database:
+  db:
     image: mariadb:12.3.2-noble
-    container_name: jardin_db
+    container_name: db
     restart: unless-stopped
     ports:
       - "3306:3306"
@@ -15,7 +15,7 @@ services:
 
   php:
     build: ./docker/php
-    container_name: jardin_php
+    container_name: php
     restart: unless-stopped
     environment:
       - XDEBUG_CONFIG=client_host=127.0.0.1
@@ -26,7 +26,7 @@ services:
 
   nginx:
     image: nginx:1.30.3-alpine3.23
-    container_name: jardin_nginx
+    container_name: nginx
     restart: unless-stopped
     ports:
       - "8080:80"
@@ -38,7 +38,7 @@ services:
 
   node:
     image: node:24.18-alpine3.24
-    container_name: jardin_node
+    container_name: node
     restart: unless-stopped
     user: "node"
     working_dir: /app
